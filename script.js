@@ -1,8 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* 1. Header Transparente -> Sólido al hacer scroll */
+    /* 1. Header que cambia al hacer scroll */
     const header = document.getElementById("header");
-
     const handleScroll = () => {
         if (window.scrollY > 50) {
             header.classList.add("scrolled");
@@ -10,9 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
             header.classList.remove("scrolled");
         }
     };
-
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Revisar al cargar la página por si ya está scrolleada
+    handleScroll();
 
     /* 2. Menú Móvil Full-Screen fluido */
     const mobileMenu = document.getElementById("mobile-menu");
@@ -22,18 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const toggleMenu = () => {
         mobileMenu.classList.toggle("active");
         navLinks.classList.toggle("active");
-
-        // Bloquear/Desbloquear el scroll del fondo
-        if (navLinks.classList.contains("active")) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "auto";
-        }
+        // Prevenir scroll en el body cuando el menú móvil está abierto
+        document.body.style.overflow = navLinks.classList.contains("active") ? "hidden" : "auto";
     };
 
     mobileMenu.addEventListener("click", toggleMenu);
 
-    // Cerrar menú móvil al hacer clic en cualquier link
     links.forEach(link => {
         link.addEventListener("click", () => {
             if (navLinks.classList.contains("active")) {
@@ -42,12 +34,44 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    /* 3. Animaciones Suaves al hacer Scroll (Intersection Observer) */
-    const reveals = document.querySelectorAll(".reveal");
+    /* 3. Lógica de Filtros en la Galería */
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
 
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Quitar clase activa de todos
+            filterBtns.forEach(b => b.classList.remove('active'));
+            // Agregar activa al que se dio click
+            btn.classList.add('active');
+
+            const filterValue = btn.getAttribute('data-filter');
+
+            galleryItems.forEach(item => {
+                if (filterValue === 'all' || item.classList.contains(filterValue)) {
+                    item.style.display = 'block';
+                    // Animación suave al aparecer
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, 10);
+                } else {
+                    // Animación suave al desaparecer
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.9)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 400);
+                }
+            });
+        });
+    });
+
+    /* 4. Animaciones Suaves al hacer Scroll (Intersection Observer) */
+    const reveals = document.querySelectorAll(".reveal");
     const revealOptions = {
         root: null,
-        threshold: 0.1, // Elemento visible al 10%
+        threshold: 0.1, // 10% del elemento visible para activar
         rootMargin: "0px 0px -50px 0px"
     };
 
@@ -55,14 +79,11 @@ document.addEventListener("DOMContentLoaded", () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("active");
-                // Optimización: Dejar de observar una vez que ya apareció
-                observer.unobserve(entry.target);
+                observer.unobserve(entry.target); // Dejar de observar para mejor rendimiento
             }
         });
     }, revealOptions);
 
-    reveals.forEach(reveal => {
-        revealOnScroll.observe(reveal);
-    });
+    reveals.forEach(reveal => revealOnScroll.observe(reveal));
 
 });

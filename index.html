@@ -15,7 +15,7 @@
 
 <body>
 
-    <!-- Navegación Glassmorphism -->
+    <!-- Navegación -->
     <header class="header" id="header">
         <div class="nav-container">
             <a href="#" class="logo">
@@ -29,6 +29,7 @@
                 <a href="#inicio">Inicio</a>
                 <a href="#material">El Material</a>
                 <a href="#equipamiento">Equipamiento</a>
+                <a href="#cobertura">Cobertura</a>
                 <a href="#proyectos">Proyectos</a>
                 <a href="#contacto" class="btn-text">Cotizar Proyecto &rarr;</a>
             </nav>
@@ -39,13 +40,31 @@
     <section id="inicio" class="hero">
         <div class="hero-bg"></div>
         <div class="container hero-content reveal">
+            <div class="hero-badge">
+                <span class="badge-dot"></span> ENVÍOS A TODO MÉXICO
+            </div>
             <p class="subtitle">INGENIERÍA METALÚRGICA PARA GASTRONOMÍA</p>
             <h1>EL ALMA INOXIDABLE <br>DE LA <span class="accent">ALTA COCINA</span></h1>
             <p class="description">Diseño, transformación y soldadura de acero inoxidable T-304 grado alimenticio.
                 Fabricamos entornos culinarios donde la higiene absoluta se encuentra con la resistencia eterna.</p>
             <div class="hero-actions">
                 <a href="#contacto" class="btn-solid">Hablemos de tu cocina</a>
-                <a href="#material" class="btn-outline">Descubrir más</a>
+                <a href="#proyectos" class="btn-outline">Ver portafolio</a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <h4>+15</h4>
+                    <p>Años de experiencia</p>
+                </div>
+                <div class="stat">
+                    <h4>T-304</h4>
+                    <p>Acero Certificado</p>
+                </div>
+                <div class="stat">
+                    <h4>100%</h4>
+                    <p>Hecho a la medida</p>
+                </div>
             </div>
         </div>
     </section>
@@ -63,12 +82,13 @@
                     <ul class="features-list">
                         <li><strong>Cero Porosidad:</strong> Impide la proliferación de bacterias.</li>
                         <li><strong>Acabado Sanitario:</strong> Soldadura TIG pulida sin uniones visibles.</li>
-                        <li><strong>Calibre Estructural:</strong> Diseñado para soportar el abuso.</li>
+                        <li><strong>Calibre Estructural:</strong> Diseñado para soportar el trabajo rudo.</li>
                     </ul>
                 </div>
                 <div class="material-image">
-                    <img src="https://images.unsplash.com/photo-1590494488665-27a9ffcb27e5?auto=format&fit=crop&w=800&q=80"
-                        alt="Acero inoxidable pulido">
+                    <!-- Imagen de soldadura/metalurgia -->
+                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=800&q=80"
+                        alt="Soldadura de acero inoxidable">
                     <div class="image-accent"></div>
                 </div>
             </div>
@@ -91,49 +111,110 @@
                 <div class="minimal-card">
                     <h3>02. Sistemas de Extracción</h3>
                     <p>Campanas extractoras con filtros trampa de grasa tipo bafle. Extraen humo y calor manteniendo un
-                        flujo seguro.</p>
+                        flujo seguro y constante.</p>
                 </div>
                 <div class="minimal-card">
                     <h3>03. Líneas de Fuego</h3>
-                    <p>Bases y recubrimientos térmicos. Acero capaz de resistir choques térmicos sin perder su
+                    <p>Bases y recubrimientos térmicos. Acero capaz de resistir choques térmicos extremos sin perder su
                         integridad estructural.</p>
                 </div>
                 <div class="minimal-card">
                     <h3>04. Almacenaje Sanitario</h3>
                     <p>Racks y espigueros diseñados sin rincones ciegos, facilitando la limpieza profunda exigida por
-                        sanidad.</p>
+                        los estándares de sanidad.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Galería -->
+    <!-- Sección Cobertura Nacional (CON MAPA REAL) -->
+    <section id="cobertura" class="coverage-section section-padding">
+        <div class="container reveal">
+            <div class="coverage-wrapper">
+                <div class="coverage-content">
+                    <span class="section-label">03 // LOGÍSTICA</span>
+                    <h2>INSTALACIONES Y ENVÍOS A <span class="accent">TODO MÉXICO</span></h2>
+                    <p>No importa en qué estado de la República te encuentres. Diseñamos en nuestra planta, enviamos con
+                        embalaje de alta seguridad e instalamos tu cocina industrial directamente en tu ubicación con
+                        nuestro equipo de técnicos especializados.</p>
+                    <div class="coverage-features">
+                        <div class="cf-item">
+                            <span class="cf-icon">✓</span>
+                            <span>Embalaje de madera para protección total</span>
+                        </div>
+                        <div class="cf-item">
+                            <span class="cf-icon">✓</span>
+                            <span>Seguro de carga incluido</span>
+                        </div>
+                        <div class="cf-item">
+                            <span class="cf-icon">✓</span>
+                            <span>Cuadrilla de instalación foránea</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="coverage-visual">
+                    <div class="map-container">
+                        <!-- Imagen de un mapa de México en formato SVG vector -->
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Blank_map_of_Mexico_%28with_states%29.svg"
+                            alt="Mapa de México" class="mexico-map">
+
+                        <!-- Puntos en el mapa (Posicionados vía CSS) -->
+                        <div class="pulse-point pt-mty" title="Monterrey"></div>
+                        <div class="pulse-point pt-cdmx" title="CDMX"></div>
+                        <div class="pulse-point pt-gdl" title="Guadalajara"></div>
+                        <div class="pulse-point pt-cun" title="Cancún"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería Mejorada con Filtros -->
     <section id="proyectos" class="gallery-section section-padding">
         <div class="container reveal">
-            <div class="section-header">
-                <span class="section-label">03 // PORTAFOLIO</span>
-                <h2>ACERO EN <span class="accent">ACCIÓN</span></h2>
+            <div class="section-header gallery-header">
+                <div>
+                    <span class="section-label">04 // PORTAFOLIO</span>
+                    <h2>ACERO EN <span class="accent">ACCIÓN</span></h2>
+                </div>
+                <div class="gallery-filters">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="cocinas">Cocinas Completas</button>
+                    <button class="filter-btn" data-filter="extraccion">Equipos Especiales</button>
+                </div>
             </div>
-            <div class="gallery-grid">
-                <div class="gallery-item large">
-                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1000&q=80"
+
+            <div class="gallery-grid" id="gallery-grid">
+                <div class="gallery-item large cocinas">
+                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1200&q=80"
                         alt="Cocina Industrial">
                     <div class="item-overlay">
                         <p>Cocina Integral - Restaurante de Autor</p>
+                        <span>CDMX</span>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=800&q=80"
-                        alt="Campana">
+                <div class="gallery-item extraccion">
+                    <img src="https://unsplash.com/es/fotos/el-interior-del-taller-metalurgico-empresa-industrial-moderna-sdciP6itlV8"
+                        alt="Campana de acero">
                     <div class="item-overlay">
-                        <p>Campana Central</p>
+                        <p>Campana de Extracción Isla</p>
+                        <span>Monterrey, NL</span>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1600566753086-00f18efc22c7?auto=format&fit=crop&w=800&q=80"
-                        alt="Tarja">
+                <div class="gallery-item cocinas">
+                    <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80"
+                        alt="Mesa de preparación acero">
                     <div class="item-overlay">
-                        <p>Zona de Lavado</p>
+                        <p>Mesas de Trabajo Reforzadas</p>
+                        <span>Guadalajara, JAL</span>
+                    </div>
+                </div>
+                <div class="gallery-item extraccion">
+                    <img src="https://images.unsplash.com/photo-1625624796338-79116e033994?auto=format&fit=crop&w=800&q=80"
+                        alt="Ductería y acero">
+                    <div class="item-overlay">
+                        <p>Sistema Integral de Ductería</p>
+                        <span>Cancún, QR</span>
                     </div>
                 </div>
             </div>
@@ -145,13 +226,14 @@
         <div class="container reveal">
             <div class="contact-grid">
                 <div class="contact-text">
-                    <span class="section-label">04 // COTIZACIÓN</span>
+                    <span class="section-label">05 // COTIZACIÓN</span>
                     <h2>DISEÑEMOS TU <span class="accent">ESPACIO</span></h2>
-                    <p>El acero inoxidable es una inversión. Compártenos los planos de tu cocina y fabricaremos el
-                        equipo exacto que necesitas.</p>
+                    <p>El acero inoxidable es una inversión a largo plazo. Compártenos los planos de tu cocina, tus
+                        ideas o necesidades, y fabricaremos el equipo exacto que necesitas con envío a tu sucursal.</p>
                     <div class="contact-details">
                         <p><strong>E.</strong> proyectos@esehnza.mx</p>
                         <p><strong>T.</strong> (55) 1234 5678</p>
+                        <p><strong>W.</strong> +52 55 9876 5432</p>
                     </div>
                 </div>
                 <div class="contact-form-container">
@@ -161,6 +243,9 @@
                         </div>
                         <div class="input-line">
                             <input type="email" placeholder="Correo Electrónico" required>
+                        </div>
+                        <div class="input-line">
+                            <input type="text" placeholder="Ciudad de Envío / Instalación" required>
                         </div>
                         <div class="input-line">
                             <input type="text" placeholder="¿Qué equipos necesitas cotizar?" required>
@@ -174,9 +259,35 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container footer-content">
-            <div class="logo">ESEHNZA<span class="accent">.MX</span></div>
-            <p>&copy; 2026 ESEHNZA. Manufactura Especializada T-304.</p>
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <div class="logo">ESEHNZA<span class="accent">.MX</span></div>
+                <p class="footer-desc">Especialistas en transformación de acero inoxidable T-304. Fabricamos soluciones
+                    duraderas, higiénicas y precisas para la industria gastronómica de todo México.</p>
+            </div>
+            <div class="footer-col links-col">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#material">Acero T-304</a></li>
+                    <li><a href="#equipamiento">Equipamiento</a></li>
+                    <li><a href="#cobertura">Envíos a México</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                </ul>
+            </div>
+            <div class="footer-col contact-col">
+                <h4>Contacto</h4>
+                <p>Ciudad de México, México.</p>
+                <p>Lunes a Viernes: 9:00 - 18:00</p>
+                <a href="mailto:proyectos@esehnza.mx" class="footer-link">proyectos@esehnza.mx</a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 ESEHNZA. Manufactura Especializada T-304. Todos los derechos reservados.</p>
+            <div class="legal-links">
+                <a href="#">Aviso de Privacidad</a>
+                <a href="#">Términos y Condiciones</a>
+            </div>
         </div>
     </footer>
 
